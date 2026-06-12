@@ -28,8 +28,8 @@ spec:
        matchExpressions:
         - key: project
           operator: In
-          values: amazon
-           -  
+          values: 
+           - amazon
  containers:
   - name: nginx
     image: nginx
