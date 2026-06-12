@@ -12,5 +12,5 @@ spec:
      - matchExpressions:
         - key: topology.kubernetes.io/zone
           operator: In
-          vlaues:
+          values:
            - us-east-1d
