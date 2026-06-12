@@ -21,6 +21,6 @@ spec:
            - amazon
  tolerations:
   - key: "hardware"
-    operator: "In"
+    operator: "Equal"
     value: "gpu"
     effect: "NoExecute"     
