@@ -18,4 +18,9 @@ spec:
         - key: project
           operator: NotIn
           values:
-           - amazon          
+           - amazon
+ tolerations:
+  - key: "hardware"
+    operator: "In"
+    value: "gpu"
+    effect: "NoExecute"     
