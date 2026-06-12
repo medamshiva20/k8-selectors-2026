@@ -25,7 +25,7 @@ spec:
            - roboshop
     - weight: 10
       preference:
-       matchExpression:
+       matchExpressions:
         - key: project
           operator: In
           values: amazon
