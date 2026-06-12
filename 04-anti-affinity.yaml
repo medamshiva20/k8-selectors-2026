@@ -14,4 +14,8 @@ spec:
         - key: topology.kubernetes.io/zone
           operator: NotIn
           values:
-           - us-east-1d          
+           - us-east-1d
+        - key: project
+          operator: NotIn
+          values:
+           - amazon          
