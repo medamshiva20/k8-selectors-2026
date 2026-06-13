@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
  name: redis-cache
 spec:
- replicas: 3
+ replicas: 2
  selector:
   matchLabels:
    app: store
@@ -50,6 +50,14 @@ spec:
             values:
              - web-store
         topologyKey: "kubernetes.io/hostname"
+    podAffinity:
+     requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+         matchExpressions:
+          - key: app
+            operator: In
+            values:
+             - store
    containers:
     - name: web-app
       image: nginx:1.16-alpine 
