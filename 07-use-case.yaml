@@ -25,3 +25,28 @@ spec:
    containers:
     - name: redis-server
       image: redis:3.2-alpine 
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: web-server
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   app: web-store
+ template:
+  metadata:
+   labels:
+    app: web-store
+  spec:
+   affinity:
+    podAntiAffinity:
+     requiredDuringSchedulingDuringExecution:
+      - labelSelector:
+         matchExpressions:
+          - key: app
+            operator: In
+            values:
+             - web-store
+             
