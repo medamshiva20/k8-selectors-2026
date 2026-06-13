@@ -28,3 +28,4 @@ spec:
           operator: In
           values:
            - backend
+      topologyKey: topology.kubernetes.io/zone
